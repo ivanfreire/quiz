@@ -1,0 +1,19 @@
+ Respuesta: <%= quiz.pregunta %>
+    <form id='form' action='/quizes/<%= quiz.id %>/answer' method='GET'>
+        <input type='text' id='respuesta' name='respuesta' value='' placeholder='Respuesta' size='20' />
+        <input type='submit' id='enviar' name='enviar' value='Enviar' />
+    </form>
+    
+    <br />
+    <p><a href="/quizes/<%= quiz.id %>/comments/new"><button>Nuevo comentario</button></a></p>
+    
+    <p><strong>Comentarios:</strong></p>
+    <% for (index in quiz.Comments) { %>
+        <% if (quiz.Comments[index].publicado || session.user) { %>
+            <p> - <%= quiz.Comments[index].texto %>
+            <% if (session.user && !quiz.Comments[index].publicado) { %>
+                <a href="/quizes/<%= quiz.id %>/comments/<%= quiz.Comments[index].id %>/publish"><button>Publicar</button></a>
+            <% } %>
+            </p>
+        <% } %>
+    <% } %>
