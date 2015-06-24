@@ -1,0 +1,41 @@
+  <table width="300px">
+        <tr>
+            <td>
+                <label for="preg" class="rem">Pregunta:</label>
+            </td>
+            <td>
+                <input type="text" id="preg" name="quiz[pregunta]"
+                    value="<%= quiz.pregunta %>" placeholder="Pregunta" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="resp" class="rem">Respuesta:</label>
+            </td>
+            <td>
+                <input type="text" id="resp" name="quiz[respuesta]"
+                    value="<%= quiz.respuesta %>" placeholder="Respuesta" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="tema" class="rem">Tema:</label>
+            </td>
+            <td>
+                <select id="tema" name="quiz[tema]">
+                    <option value='' <%= quiz.tema === '' ? 'selected' : '' %>></option>
+                    <option value="Otro" <%= quiz.tema === 'Otro' ? 'selected' : '' %>>Otro</option>
+                    <option value="Humanidades" <%= quiz.tema === 'Humanidades' ? 'selected' : '' %>>Humanidades</option>
+                    <option value="Ocio"<%= quiz.tema === 'Ocio' ? 'selected' : '' %>>Ocio</option>
+                    <option value="Ciencia"<%= quiz.tema === 'Ciencia' ? 'selected' : '' %>>Ciencia</option>
+                    <option value="Tecnología"<%= quiz.tema === 'Tecnología' ? 'selected' : '' %>>Tecnología</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a href="/quizes"><button type="button">Cancelar</button></a>
+                <input type="submit" name="guardar" value="Guadar" />
+            </td>
+        </tr>
+    </table>
