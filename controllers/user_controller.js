@@ -1,7 +1,7 @@
 
 var users = {
     admin:   {id : 1, username : 'admin',    password : 'admin'},
-    jcantosm: {id : 2, username : 'jcantosm', password : '111111'}
+    ifreiref: {id : 2, username : 'ifreiref', password : '111111'}
 };
 
 exports.autenticar = function(login, password, callback) {
